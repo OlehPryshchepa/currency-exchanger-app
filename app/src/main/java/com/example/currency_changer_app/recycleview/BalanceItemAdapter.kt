@@ -10,7 +10,6 @@ import com.example.currency_changer_app.model.Balance
 class BalanceItemAdapter(private val context: Context, private val balanceList:MutableList<Balance>)
     : RecyclerView.Adapter<BalanceItemAdapter.BalanceItemViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BalanceItemViewHolder {
         val binding = BalanceItemLayoutBinding.inflate(LayoutInflater.from(context),parent,false)
         return BalanceItemViewHolder(binding)
@@ -24,7 +23,6 @@ class BalanceItemAdapter(private val context: Context, private val balanceList:M
     override fun getItemCount(): Int {
         return balanceList.size
     }
-
 
     class BalanceItemViewHolder(balanceItemLayoutBinding: BalanceItemLayoutBinding)
         : RecyclerView.ViewHolder(balanceItemLayoutBinding.root){

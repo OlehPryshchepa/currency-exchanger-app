@@ -5,9 +5,9 @@ import com.example.currency_changer_app.model.User
 
 interface UserRepository {
 
-    fun getByEmail(email: String): LiveData<User>
+    suspend fun getByEmail(email: String): User
 
-    suspend fun insert(user: User)
+    suspend fun insert(user: User): Long
 
     suspend fun update(user: User)
 

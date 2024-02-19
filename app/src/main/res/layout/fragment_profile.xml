@@ -12,17 +12,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
-        android:text="Username"
+        android:text="@string/fragment_profile_username_textview"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/balance_textView"
-        android:layout_width="52dp"
-        android:layout_height="16dp"
-        android:layout_marginTop="36dp"
-        android:text="Balance:"
-        app:layout_constraintStart_toEndOf="@+id/username_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/fragment_profile_balance_textview"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username_textView" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -36,5 +39,16 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         tools:listitem="@layout/balance_item_layout"/>
+
+    <ImageView
+        android:id="@+id/logout_btn"
+        android:layout_width="30dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/baseline_logout_btn_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintStart_toEndOf="@+id/username_textView"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

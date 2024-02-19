@@ -2,4 +2,21 @@
     <string name="app_name">currency-changer-app</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="currency_exchanger_buy_btn">Buy</string>
+    <string name="currency_exchanger_input_text_for_sell_hint">For sell</string>
+    <string name="fragment_currency_exchanger_title">Currency Exchanger</string>
+    <string name="fragment_profile_username_textview">Username</string>
+    <string name="fragment_profile_balance_textview">Balance:</string>
+    <string name="activity_registration_page_imageview">Registration page</string>
+    <string name="activity_registration_page_textview">Registration page</string>
+    <string name="activity_registration_page_email_inputEditText_hint">Email</string>
+    <string name="activity_registration_page_username_inputEditText_hint">Username</string>
+    <string name="activity_registration_page_password_inputEditText_hint">Password</string>
+    <string name="activity_registration_page_registration_btn">Register</string>
+    <string name="activity_login_page_textview">Login page</string>
+    <string name="activity_login_email_inputtext_hint">Email</string>
+    <string name="activity_login_password_inputtext_hint">Password</string>
+    <string name="activity_login_btn">Login</string>
+    <string name="activity_login_register_textBtn">Register</string>
+    <string name="activity_registration_login_textBtn">Login</string>
 </resources>

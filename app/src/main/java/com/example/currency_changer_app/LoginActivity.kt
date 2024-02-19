@@ -6,7 +6,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.currency_changer_app.databinding.ActivityLoginBinding
-import com.example.currency_changer_app.util.APP
+import com.example.currency_changer_app.util.ACTIVE_USER
+import com.example.currency_changer_app.util.UtilClass
 import com.example.currency_changer_app.viewmodel.StartLoginViewModel
 
 class LoginActivity : AppCompatActivity() {
@@ -18,13 +19,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        APP = this
         init()
+
         binding.loginButton.setOnClickListener {
             login()
-            val intent = Intent(this, MainActivity::class.java)//Intent(this, RegistrationActivity::class.java)
-            Toast.makeText(this, "Login button", Toast.LENGTH_SHORT).show()
-            startActivity(intent)
         }
 
         binding.registerTextView.setOnClickListener {
@@ -41,6 +39,22 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login() {
-        startLoginViewModel.getUser(binding.emailInputText.text.toString())
+        val email = binding.emailInputText.text.toString()
+        val password = binding.passwordInputText.text.toString()
+
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Email and password cannot be empty", Toast.LENGTH_LONG).show()
+        } else if (!UtilClass.isValidEmail(email)) {
+            Toast.makeText(this, "Email should look like example@gmail.com", Toast.LENGTH_LONG).show()
+        } else {
+            val user = startLoginViewModel.getUser(email)
+            if (user != null && startLoginViewModel.checkPassword(password, user.password, user.salt)) {
+                ACTIVE_USER = user
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Wrong password or email", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 }

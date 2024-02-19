@@ -10,99 +10,63 @@
         android:id="@+id/cc_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="currency changer"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="52dp"
+        android:text="@string/fragment_currency_exchanger_title"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129" />
-
-    <!-- cc_sell_liner_layout -->
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/cc_sell_liner_layout"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cc_textView" >
+        app:layout_constraintTop_toBottomOf="@+id/cc_textView"
+        tools:layout_editor_absoluteX="0dp">
 
         <ImageView
             android:id="@+id/image_sell"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:src="@drawable/baseline_currency_sell_24"
-            tools:layout_editor_absoluteX="69dp"
-            tools:layout_editor_absoluteY="204dp" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/baseline_currency_sell_24" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/currency_sell_input_text"
             android:layout_width="0dp"
-            android:layout_height="41dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="For sell"
+            android:hint="@string/currency_exchanger_input_text_for_sell_hint"
             android:inputType="numberDecimal" />
 
         <Spinner
             android:id="@+id/spinner_to_sell"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="296dp"
-            tools:layout_editor_absoluteY="196dp" />
-
-    </LinearLayout>
-
-    <!-- cc_buy_liner_layout -->
-
-    <LinearLayout
-        android:id="@+id/cc_buy_liner_layout"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cc_sell_liner_layout" >
-
-        <ImageView
-            android:id="@+id/image_buy"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/baseline_currency_buy_24"
-            tools:layout_editor_absoluteX="69dp"
-            tools:layout_editor_absoluteY="204dp" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/currency_buy_input_text"
-            android:layout_width="0dp"
-            android:layout_height="41dp"
-            android:layout_weight="1"
-            android:hint="For buy"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content" />
 
         <Spinner
             android:id="@+id/spinner_to_buy"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="296dp"
-            tools:layout_editor_absoluteY="196dp" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
-
 
     <Button
         android:id="@+id/buy_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
-        android:text="Buy"
+        android:layout_marginBottom="120dp"
         android:width="200dp"
+        android:text="@string/currency_exchanger_buy_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cc_buy_liner_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/cc_sell_liner_layout"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

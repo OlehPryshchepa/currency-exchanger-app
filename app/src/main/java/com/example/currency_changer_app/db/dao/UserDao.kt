@@ -10,8 +10,8 @@ import com.example.currency_changer_app.model.User
 @Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(user: User)
+    suspend fun insert(user: User): Long
 
     @Query("SELECT * FROM users WHERE email LIKE :email")
-    fun getUser(email: String): LiveData<User>
+    suspend fun getUser(email: String): User
 }

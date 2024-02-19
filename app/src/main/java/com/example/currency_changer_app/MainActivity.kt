@@ -1,10 +1,7 @@
 package com.example.currency_changer_app
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.currency_changer_app.bottomnav.changer.CurrencyChangerFragment
 import com.example.currency_changer_app.bottomnav.profile.ProfileFragment
@@ -41,5 +38,4 @@ class MainActivity : AppCompatActivity() {
             return@setOnItemSelectedListener true
         }
     }
-
 }
